@@ -1,0 +1,1 @@
+1. 如果ssh到服务器， 想打开浏览器或使用其他GUI， 运行 export DISPLAY=:0 ； 
