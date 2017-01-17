@@ -1,1 +1,8 @@
 1. 如果ssh到服务器， 想打开浏览器或使用其他GUI， 运行 export DISPLAY=:0 ； 
+
+2. Vnc 下载vinagre 远程链接服务器并可视化
+
+3. 从本机拷贝文件到服务器，在服务器terminal输入： 
+sudo scp samueldeng@10.10.31.6:/home/samueldeng/Downloads/Win10_1607_English_x64.iso .
+
+4.
