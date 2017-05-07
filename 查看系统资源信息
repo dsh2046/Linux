@@ -1,0 +1,9 @@
+1. vmstat 刷新时间间隔 刷新次数
+  整合了内存/硬盘/CPU等信息
+2. dmesg :显示系统自检信息
+3. free ：专门用于查看内存信息
+4. cat /proc/cpuinfo: 查看CPU信息
+5. uptime
+6. uname : 查看内核信息
+7. 查看系统操作位数： file /bin/ls(或者随便一个外部命令)
+8. lsb_release -a : 查看当前的发行版本
