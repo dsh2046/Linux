@@ -1,0 +1,6 @@
+1.远程终端之后要输入logout来退出，否则用户信息会卡住linux中
+2. netstat -tuln  可以用来看有多少端口服务正常打开
+   netstat -an    看全部网络的连接状况
+3.netstat -an | grep ESTABLISHED | wc -l 利用管道符的命令连接可以看当前与多少用户正在连接
+4.netstate -rn 和route -n 命令可以查看网关
+5.nslookup命令可以看DNS，nslookup 网络域名  会显示域名相对于的IP（输入exit返回到命令行）
