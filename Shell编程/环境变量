@@ -47,3 +47,26 @@ PS1变量
 umask
 PATH变量
 调用/etc/profile.d/*.sh文件
+
+
+4.本地终端欢迎信息：/etc/issue
+\d 显示当前系统日期
+\s 显示操作系统名称
+\l 显示登陆的终端号，这个比较常用
+\m 显示硬件系统结构，如i386，i686等
+\n 显示主机名
+\o 显示域名
+\r 显示内核版本
+\t 显示当前系统时间
+\u 显示当前登陆用户的序列号
+
+远程登陆欢迎信息：/etc/issue.net （默认是不启用的，不支持转义符）
+在/etc/ssh/sshd_config决定，加入"Banner /etc/issue.net"行才能生效
+并且还要重启sshd服务,service sshd restart
+
+登陆之后欢迎信息：/etc/motd
+issue是登陆之前生效的，motd是登陆之后生效的，建议写在motd中
+
+Linux 默认有六个本地终端。
+  Alt F2 切换到终端2
+  Alt F1 切换到终端1
