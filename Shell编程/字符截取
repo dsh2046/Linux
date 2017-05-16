@@ -12,7 +12,10 @@ df -h 以人性化显示磁盘使用情况，能显示大小的基本都支持�
 注意：cut只能以指定的字符进行分割，所以处理空格作为分隔符时比较吃力
 
 2. awk 取出某行(比cut更强大更复杂)
-awk 'BEGIN{print "test"}{print $2 "\t" $4}END{print "test"}' student.txt
+awk 'BEGIN{print "test"}{print $2 "\t" $4}END{print "test"}' student.txt  打印出第二列与第四列
+
+grep "bin/bash" /etc/passwd | awk 'BEGIN{FS=":"}{print $1}'　　　打印出用户名字
+
 BEGIN：在读取数据，放入指定变量之前，就先执行BEGIN后面{}里的内容。
 END：所有动作执行完后，只要到了结尾，就执行END后面{}里的内容。
 
