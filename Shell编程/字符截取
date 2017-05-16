@@ -1,4 +1,4 @@
-grep行提取，cut列提取；
+1. grep行提取，cut列提取；
 
 cut [选项] 文件名
 -f 列号：提取第几列（从1开始）
@@ -10,3 +10,16 @@ grep "bin/bash" /etc/passwd | grep -v "root" | cut -f 1 -d ":" 提取非root登�
 
 df -h 以人性化显示磁盘使用情况，能显示大小的基本都支持人性化显示
 注意：cut只能以指定的字符进行分割，所以处理空格作为分隔符时比较吃力
+
+2. awk 取出某行(比cut更强大更复杂)
+awk 'BEGIN{print "test"}{print $2 "\t" $4}END{print "test"}' student.txt
+BEGIN：在读取数据，放入指定变量之前，就先执行BEGIN后面{}里的内容。
+END：所有动作执行完后，只要到了结尾，就执行END后面{}里的内容。
+
+FS内置变量
+定义awk的分隔符，awk默认的分隔符既可以是空格，也可以是tab。
+awk 'BEGIN{FS=":"}'
+#将awk的分隔符定义为“:”
+
+关系运算符
+都是利用位置参数变量来传递值的。
