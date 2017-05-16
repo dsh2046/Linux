@@ -52,3 +52,9 @@ sed '4c xxwmpg' student.txt 将第二行的整行替换为xxwmpg
 sed '6s/70/100/g' student.txt 将第6行的所有70全部替换为100，如果不指定行的话会替换所有的指定字符串
 -e ; 负责隔开进行多个动作
 sed -e 's/fengj//g';s/cang//g' student.txt 同时把fengj和cang替换为空
+
+４．　sort
+排序命令sort格式及选项
+#sort /etc/passwd   ##按照字母顺序a-z排列文件内容
+#sort -r /etc/passwd   ##反向排序，即按z-a顺序排列文件内容
+#sort -n -t ":" -k 3,3 /etc/passwd   ##以数值型进行排序，指定分隔符为“:”并只取第三字段的内容
