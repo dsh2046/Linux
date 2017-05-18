@@ -10,3 +10,80 @@
 [ 文件1 -nt 文件2 ]   判断文件1修改时间是不否比文件2 的新（如果新则为真）
 [ 文件1 -ot 文件2 ]
 [ 文件1 -ef 文件2 ]   判断文件1文件2是否为硬链接（inode号是否一致）
+
+1. if
+#!/bin/bash
+read -t 30 -p "plz input a number" num1   #获取用户输入
+
+if [ -n "$num1" ]  #判断$num1是否为空，非空则为真
+  then
+  isnum=$(echo $num1 | sed 's/[0-9]//g')  #判断是否为数字，若是则$isnum为空(把$num1的数字替换为空以判断是否为数字)
+  if [ -z "$isnum" ]
+    then
+    echo 'This is a number'
+  else
+    echo 'Not a number!'
+    exit 1                      #给出错误代号１
+  fi
+fi
+
+2. case
+#!/bin/bash
+read -t 10 -p "plz input 1,2 or 3:" number
+
+case "$number" in
+        "1")
+                echo 'bad'
+                ;;
+        "2")
+                echo 'good'
+                ;;
+        "3")
+                echo 'perfect'
+                ;;
+        *)
+                echo 'errors'
+                ;;
+esac
+
+2. for循环
+批量解压缩
+ls *.tar.gz > ls.log(>覆盖)
+ls *.tgz >> ls.log(>>添加)
+for i in $(cat ls.log)
+  do
+    tar -zxvf $i & > /dev/null
+done
+
+３．批量添加用户
+
+#!/bin/bash
+#批量添加指定数量的用户实例
+read -t 30 -p "input user name:" name
+read -t 30 -p "input password:" pass
+read -t 30 -p "input user number:" num
+#检查输入内容是否为非空
+if [ -n "$name" -a -n "$pass" -a -n "$num" ]
+        then
+#检查输入的用户数量是否为纯数字 
+        chknum=$( echo "$num" | sed 's/[0-9]//g' )
+        if [ -z "$chknum" ]
+             then
+                 for (( i=1;i<="$num";i=i+1 ))
+                        do
+#添加用户
+                         /usr/sbin/useradd $name$i
+#添加用户密码，passwd 的--stdin参数是非交互输入，直接传入密码，不需要第二次确认
+echo $pass | /usr/bin/passwd --stdin $name$i
+echo "add $i"
+        done
+        else
+                echo "the num must be number"
+        fi
+else
+        echo "must be input name pass num"
+fi
+
+
+
+
