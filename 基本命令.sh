@@ -7,4 +7,4 @@
 3. 从某电脑拷贝文件到本机服务器，在本机服务器terminal输入： 
 sudo scp samueldeng@10.10.31.6:/home/samueldeng/Downloads/Win10_1607_English_x64.iso .
 
-4.
+4.apt-get purge -y --auto-remove　sth    ＃完全卸载并清除配置文件
