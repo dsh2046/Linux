@@ -1,0 +1,5 @@
+1. tab自动补全大小写
+（1）在~目录中创建.inputrc:
+（2）打开.inputrc，添加如下设置：
+[plain] view plain copy
+set completion-ignore-case on 
