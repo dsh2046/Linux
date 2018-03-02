@@ -7,3 +7,9 @@
 nohup 命令 &
 示例
 nohup /root/for.sh & #用绝对路径22:03 2017/05/07
+
+nohup python manage.py runserver 0.0.0.0:8000 &
+
+fg命令
+fg 1   // 把1任务从后台切换至前台
+
