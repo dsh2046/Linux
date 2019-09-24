@@ -9,5 +9,5 @@ To free pagecache, dentries and inodes:  ```echo 3 > /proc/sys/vm/drop_caches``
 ```stress-ng --vm-bytes $(awk '/MemFree/{printf "%d\n", $2 * 0.9;}' < /proc/meminfo)k --vm-keep -m 1```
 
 ### 3. List size of folders
-```du -sh```
+```du -sh```  
 ```du -h --max-depth=1 | sort -hr```
