@@ -11,3 +11,6 @@ To free pagecache, dentries and inodes:  ```echo 3 > /proc/sys/vm/drop_caches``
 ### 3. List size of folders
 ```du -sh```  
 ```du -h --max-depth=1 | sort -hr```
+
+### 4. Kill a process (celery for example)
+```ps auxww | grep 'celery' | awk '{print $2}' | xargs kill -9```
