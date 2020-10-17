@@ -3,3 +3,8 @@
 （2）打开.inputrc，添加如下设置：
 [plain] view plain copy
 set completion-ignore-case on 
+
+2. 自动补全历史命令
+vi .inputrc
+"\e[A": history-search-backward
+"\e[B": history-search-forward
