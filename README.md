@@ -14,3 +14,6 @@ To free pagecache, dentries and inodes:  ```echo 3 > /proc/sys/vm/drop_caches``
 
 ### 4. Kill a process (celery for example)
 ```ps auxww | grep 'celery' | awk '{print $2}' | xargs kill -9```
+
+### 5. Update kernel
+```sudo apt install linux-image-5.4.0-54-generic linux-headers-5.4.0-54-generic linux-modules-extra-5.4.0-54-generic```
