@@ -17,3 +17,6 @@ To free pagecache, dentries and inodes:  ```echo 3 > /proc/sys/vm/drop_caches``
 
 ### 5. Update kernel
 ```sudo apt install linux-image-5.4.0-54-generic linux-headers-5.4.0-54-generic linux-modules-extra-5.4.0-54-generic```
+
+### 6. Install OpenCL
+```sudo apt-get install opencl-*amdgpu*```
